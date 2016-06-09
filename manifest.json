@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+
+  "name": "FixReddit",
+  "description": "Fixes a couple of annoying things with reddit",
+  "version": "1.0",
+
+
+  "permissions": [
+    "tabs",
+    "storage"
+  ],
+
+  "content_scripts": [
+      {
+        "run_at": "document_start",
+        "js": [ "redirectHandler.js" ],
+        "matches": [ "http://m.reddit.com/*", "https://m.reddit.com/*","http://*.reddit.com/*.compact", "https://*.reddit.com/*.compact" ] 
+      }
+  ],
+  
+  "options_ui": {
+    "page": "options.html",
+    "chrome_style": true
+  }
+
+}
